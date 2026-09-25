@@ -1,0 +1,3 @@
+package com.registration.util;
+import java.sql.*;
+public final class DBConnection{private static final String URL="jdbc:mysql://localhost:3306/student_registration?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";private static final String USERNAME="root";private static final String PASSWORD="YOUR_MYSQL_PASSWORD";private DBConnection(){}static{try{Class.forName("com.mysql.cj.jdbc.Driver");}catch(ClassNotFoundException e){throw new ExceptionInInitializerError("MySQL Connector/J is missing.");}}public static Connection getConnection()throws SQLException{return DriverManager.getConnection(URL,USERNAME,PASSWORD);}}
